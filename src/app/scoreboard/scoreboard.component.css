@@ -1,20 +1,28 @@
-.card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.scoreboard-container {
+  background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+  font-family: 'Orbitron', sans-serif;
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+.scoreboard-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.border-success {
-  border-width: 2px !important;
+.score-card {
+  transition: all 0.3s ease;
 }
 
-.btn {
-  font-size: 1.1rem;
+.score-card:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.1);
 }
 
-h2, h4 {
-  color: #2c3e50;
+button.btn {
+  min-width: 60px;
+  font-size: 1.5rem;
+}
+
+h1.display-4 {
+  letter-spacing: 2px;
 }

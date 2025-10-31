@@ -9,26 +9,34 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./scoreboard.component.css']
 })
 export class ScoreboardComponent {
-  teamAScore = 0;
-  teamBScore = 0;
+  // 🏆 Team names
+  teamA = 'Team A';
+  teamB = 'Team B';
 
-  increaseScore(team: 'A' | 'B') {
-    if (team === 'A') this.teamAScore++;
-    else this.teamBScore++;
+  // 🧮 Scores
+  scoreA = 0;
+  scoreB = 0;
+
+  // ➕ Increment / ➖ Decrement
+  increaseA() {
+    this.scoreA++;
   }
 
-  decreaseScore(team: 'A' | 'B') {
-    if (team === 'A' && this.teamAScore > 0) this.teamAScore--;
-    else if (team === 'B' && this.teamBScore > 0) this.teamBScore--;
+  decreaseA() {
+    if (this.scoreA > 0) this.scoreA--;
   }
 
-  resetScores() {
-    this.teamAScore = 0;
-    this.teamBScore = 0;
+  increaseB() {
+    this.scoreB++;
   }
 
-  isWinning(team: 'A' | 'B') {
-    if (team === 'A') return this.teamAScore > this.teamBScore;
-    return this.teamBScore > this.teamAScore;
+  decreaseB() {
+    if (this.scoreB > 0) this.scoreB--;
+  }
+
+  // 🔁 Reset everything
+  reset() {
+    this.scoreA = 0;
+    this.scoreB = 0;
   }
 }
