@@ -1,0 +1,29 @@
+<div class="container text-center py-5">
+  <h1 class="mb-4 fw-bold">Universal Scoreboard</h1>
+
+  <div class="row justify-content-center">
+    <!-- Team A -->
+    <div class="col-md-4 col-sm-6 m-2 p-3 border rounded shadow-sm"
+         [ngClass]="{ 'border-success': isWinning('A'), 'bg-light': true }">
+      <h2 class="display-6 fw-bold my-3">Team A</h2>
+      <div class="fs-1 fw-bold mb-3">{{ teamAScore }}</div>
+      <div>
+        <button class="btn btn-success me-2" (click)="increaseScore('A')">+</button>
+        <button class="btn btn-danger" (click)="decreaseScore('A')">-</button>
+      </div>
+    </div>
+
+    <!-- Team B -->
+    <div class="col-md-4 col-sm-6 m-2 p-3 border rounded shadow-sm"
+         [ngClass]="{ 'border-success': isWinning('B'), 'bg-light': true }">
+      <h2 class="display-6 fw-bold my-3">Team B</h2>
+      <div class="fs-1 fw-bold mb-3">{{ teamBScore }}</div>
+      <div>
+        <button class="btn btn-success me-2" (click)="increaseScore('B')">+</button>
+        <button class="btn btn-danger" (click)="decreaseScore('B')">-</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary mt-4 px-4" (click)="resetScores()">Reset</button>
+</div>
